@@ -4,7 +4,7 @@ warnings.filterwarnings("ignore")
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression, LinearRegression
+from sklearn.linear_model import LogisticRegression, LinearRegression, Ridge
 from sklearn.metrics import accuracy_score, confusion_matrix, mean_squared_error
 from sklearn.model_selection import train_test_split, learning_curve
 
@@ -19,10 +19,10 @@ df = pd.read_csv(path)
 x = df.drop(columns=languages+['Word'])
 y = df[languages]
 
-#
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=7)
+# Splitting data into training and testing sets
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.7, random_state=7)
 
-# Anything computationally intensive is placed in a function
+# Plots the training and validation scores for different training set sizes
 def train_curves_plot(clf, x, y):
     train_sizes, train_scores, test_scores = learning_curve(clf,x,y,train_sizes=[i / 10 for i in range(1, 10)])
     avg_trainscores = np.mean(train_scores,axis=1)
@@ -34,13 +34,14 @@ def train_curves_plot(clf, x, y):
     plt.legend(loc='best')
     plt.show()
 
+# Plots the training vs testing accuracy/error for each language
 def train_test_accuracy_plot(train_acc, test_acc, title, ylim=(0,1)):
     barWidth = 0.25
     fig = plt.subplots(figsize=(12,8))
     br1 = np.arange(len(languages))
     br2 = [x + barWidth for x in br1]
-    plt.bar(br1, train_acc, color='r',width=barWidth,label='Training accuracy')
-    plt.bar(br2, test_acc, color='b',width=barWidth,label='Testing accuracy')
+    plt.bar(br1, train_acc, color='r',width=barWidth,label='Training')
+    plt.bar(br2, test_acc, color='b',width=barWidth,label='Testing')
     plt.xticks([x + barWidth/2 for x in range(len(languages))], languages)
     plt.title(title)
     plt.ylim(ylim)
@@ -54,14 +55,17 @@ def reg_pred(clf, x_train, y_train, x_test, y_test):
     y_test_pred = clf.predict(x_test)
     return y_train_pred, y_test_pred
 
-clf = LogisticRegression(max_iter=100, n_jobs=8)
-regr = LinearRegression(n_jobs=8)
+# Classifiers used
+clf = LogisticRegression(max_iter=30)
+regr = Ridge(alpha=1.0)
 
+# First plot
 train_curves_plot(clf,x,y['English'])
 
+# Ridge regression plot
 train_acc = []
 test_acc = []
-title = "Figure III - Linear regression training vs testing accuracy, by language"
+title = "Figure IV - Lasso regression training vs testing errors, by language"
 for lang in languages:
     y_train_s = y_train[lang]
     y_test_s = y_test[lang]
@@ -70,8 +74,9 @@ for lang in languages:
     y_test_accuracy = mean_squared_error(y_test_s,y_test_pred)
     train_acc.append(y_train_accuracy)
     test_acc.append(y_test_accuracy)
-train_test_accuracy_plot(train_acc,test_acc,title)       
+train_test_accuracy_plot(train_acc,test_acc,title,ylim=(0,0.2))       
 
+# Logistic Regression Plot
 train_acc = []
 test_acc = []
 title = "Figure II - Logistic regression training vs testing accuracy, by language"
