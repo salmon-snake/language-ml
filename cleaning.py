@@ -12,30 +12,12 @@ def clean(in_path, out_path, line_pattern):
     with open(folder+out_path, 'w', encoding='utf-8') as file:
         for match in matches:
             file.write(match + '\n') 
+read_paths = ['finnish_dirty.txt', 'spanish_dirty.txt', 'latin_dirty.txt', 'french_dirty.txt', 'english_dirty.txt']
+write_paths = ['finnish.txt', 'spanish.txt', 'latin.txt', 'french.txt', 'english.txt']
 
-in_path = 'finnish_dirty.txt'
-out_path = 'finnish.txt'
-pattern = r'\d ([a-zéèêëàáâîíóôûúüçæœùïÿñôäöå\'\-\_]+)'
-
-clean(in_path, out_path, pattern)
-
-in_path = 'spanish_dirty.txt'
-out_path = 'spanish.txt'
-pattern = r'\.\t([a-zéèêëàáâîíóôûúüçæœùïÿñôäöå\'\-\_]+)'
-
-clean(in_path, out_path, pattern)
-
-in_path = 'latin_dirty.txt'
-out_path = 'latin.txt'
-pattern = r'\n([a-zéèêëàáâîíóôûúüçæœùïÿñôäöå\'\-\_]+)'
-
-clean(in_path, out_path, pattern)
-
-in_path = 'french_dirty.txt'
-out_path = 'french.txt'
-pattern = r'\. ([a-zéèêëàáâîíóôûúüçæœùïÿñôäöå\'\-\_]+)'
-
-clean(in_path, out_path, pattern)
+# Grabs all words in these files. Words not part of the dataset are also grabbed, but they still belong to the target language
+for rp,wp in zip(read_paths, write_paths):
+    clean(rp, wp, r'([a-zéèêëàáâîíóôûúüçæœùïÿñôäöå\'\-]+)')
 
 
 

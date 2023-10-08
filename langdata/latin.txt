@@ -1,3 +1,4 @@
+t
 in
 est
 non
@@ -3119,6 +3120,7 @@ mutare
 emit
 lunae
 stipulatione
+et
 umeris
 uidimus
 malus
@@ -4588,6 +4590,7 @@ uenturum
 fortius
 dimidium
 e
+st
 suspicione
 putaret
 rates
@@ -4760,6 +4763,7 @@ pulsus
 inimica
 tribunum
 dubitare
+et
 praebet
 cutem
 seri
@@ -4973,6 +4977,7 @@ collegam
 uiridis
 praeceptum
 i
+n
 conuentus
 statione
 discere
@@ -5268,6 +5273,7 @@ rectius
 etruria
 fecissent
 e
+go
 tarde
 petebat
 instrumentum
@@ -5382,6 +5388,7 @@ maturius
 occasione
 interdiu
 u
+t
 quibusque
 secundae
 face
@@ -5682,6 +5689,7 @@ aluo
 dederis
 agimus
 qui
+d
 ducat
 defunctus
 prouidentia
@@ -5994,6 +6002,7 @@ superbia
 quaestus
 patiar
 e
+t
 mitto
 puerorum
 ficta
@@ -6260,6 +6269,7 @@ magnitudinis
 duris
 siti
 superioris
+si
 aerario
 egisse
 angustiis
@@ -6701,6 +6711,7 @@ carnem
 rusticus
 uenimus
 interuallis
+non
 mixtum
 monet
 existimauit
@@ -7082,6 +7093,7 @@ debeas
 coctum
 somnis
 tarquinius
+quid
 traiecit
 foramina
 uocauit
@@ -7317,6 +7329,7 @@ uidebuntur
 deiecit
 sardinia
 a
+tque
 mutato
 praestabit
 potione
@@ -7452,6 +7465,7 @@ labra
 temperat
 perfidia
 no
+n
 cornelia
 troianos
 adfectibus
@@ -7548,6 +7562,7 @@ grana
 nascatur
 cupere
 quo
+d
 ualens
 ruptis
 damnari
@@ -8299,6 +8314,7 @@ genetiuo
 poscere
 rutam
 e
+sse
 tiberi
 theseus
 illyrico
@@ -8474,6 +8490,7 @@ k
 mittes
 quotienscumque
 cu
+m
 arduum
 aestiua
 sisti
@@ -8494,6 +8511,7 @@ terraque
 inutilem
 nedum
 ho
+c
 crescunt
 spectant
 recentia
@@ -8700,6 +8718,7 @@ posuerunt
 parant
 difficultatem
 qua
+m
 audiendi
 occupare
 angues
@@ -9101,6 +9120,7 @@ immortalis
 flectere
 praebent
 scriptam
+nec
 secutum
 pugnandi
 dextras
@@ -9135,6 +9155,7 @@ coactis
 ferebatur
 absolutum
 nu
+nc
 tenero
 producitur
 aedificare
@@ -9231,6 +9252,7 @@ iactare
 administrationem
 probant
 mi
+hi
 rapi
 apolline
 libertates
